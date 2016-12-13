@@ -26,5 +26,10 @@ visudo
 www ALL=(root) NOPASSWD: /etc/init.d/httpd
 ```
 
-2. 客户端浏览器访问    
+4. 客户端浏览器访问    
 http://xxx.xxx.com/cgi-bin/UpgradeWhiteList.py?IP=144.144.144.144&Key=21
+
+### 不足
+1. 由于程序是挂载apache下面的，因此不能使用**service httpd restart**，只能用reload
+2. 也是由于程序是挂载apache下面的，所以访问链接后，页面会显示无法打开，因为reload的时候，apache关闭了连接进程
+
